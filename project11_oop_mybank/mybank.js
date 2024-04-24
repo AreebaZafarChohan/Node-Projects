@@ -1,6 +1,7 @@
+#! /usr/bin/env node
+
 import inquirer from "inquirer";
 import chalk from "chalk";
-import chalkAnimation from "chalk-animation";
 class ATM {
     users = [];
     // Function to generate a 5-digit unique ID for user 
@@ -166,8 +167,8 @@ class ATM {
                     })
                         .then((answers) => {
                         if (answers.restart) {
-                            console.log(chalk.green("Restarting ATM..."));
-                            console.log(chalk.green("Welcome back to the ATM..."));
+                            console.log(chalk.cyan("Restarting ATM..."));
+                            console.log(chalk.cyan("Welcome back to the ATM..."));
                             this.userLogin(); // Restart the login process
                         }
                         else {
@@ -183,7 +184,7 @@ class ATM {
     }
     // Start the application 
     start() {
-        const animation = chalkAnimation.rainbow("Welcome to the ATM.");
+        console.log(chalk.yellow.bold.underline("\n Welcome to the ATM! \n"));
         inquirer.prompt([
             {
                 type: "list",

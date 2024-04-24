@@ -1,4 +1,5 @@
-#! /usr/bin/env node
+#! /usr/bin/env node 
+
 import inquirer from "inquirer";
 async function calculator() {
     const { number1, number2, operator } = await inquirer.prompt([

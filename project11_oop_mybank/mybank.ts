@@ -1,7 +1,6 @@
 import inquirer from "inquirer";
 import chalk from "chalk";
 import { tr } from "@faker-js/faker";
-import chalkAnimation from "chalk-animation"
 
 // Simulated User Data 
 interface UserData {
@@ -186,8 +185,8 @@ class ATM {
                     })
                     .then((answers: {restart: boolean}) => {
                         if (answers.restart) {
-                            console.log(chalk.green("Restarting ATM..."));
-                            console.log(chalk.green("Welcome back to the ATM..."));
+                            console.log(chalk.cyan("Restarting ATM..."));
+                            console.log(chalk.cyan("Welcome back to the ATM..."));
                             this.userLogin(); // Restart the login process
                         } else {
                             console.log(chalk.green(`Thank you for using the ATM. Have a great day! `));
@@ -203,7 +202,7 @@ class ATM {
 
     // Start the application 
     start(): void {
-        const animation = chalkAnimation.rainbow("Welcome to the ATM.");
+        console.log(chalk.yellow.bold.underline("\n Welcome to the ATM! \n"));
         
         inquirer.prompt([
             {
