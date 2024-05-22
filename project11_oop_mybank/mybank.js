@@ -1,5 +1,3 @@
-#! /usr/bin/env node
-
 import inquirer from "inquirer";
 import chalk from "chalk";
 class ATM {
@@ -10,7 +8,7 @@ class ATM {
     }
     // Function to simulate user signup
     userSignUp() {
-        -inquirer.prompt([
+        inquirer.prompt([
             {
                 type: "input",
                 name: "firstName",
@@ -38,8 +36,8 @@ class ATM {
                 name: "mobileNumber",
                 message: "Enter your mobile number:",
                 validate: (input) => {
-                    const age = parseInt(input);
-                    if (!/^\d{11}$/.test(input)) {
+                    const mobileNumber = parseInt(input);
+                    if (isNaN(mobileNumber) || !/^\d{11}$/.test(input)) {
                         return chalk.red `Please enter a valid 11-digit mobile number.`;
                     }
                     return true;

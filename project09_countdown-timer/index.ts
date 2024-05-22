@@ -4,8 +4,7 @@ import chalk from "chalk";
 // Function to create a delay
 const sleep = (milliseconds: number): Promise<void> => {
   return new Promise((resolve) => setTimeout(resolve, milliseconds));
-};
-
+}
 // Function to display a welcome message
 async function welcome(): Promise<void> {
   console.log(chalk.cyan.bold.underline("Welcome to the countdown timer app!"));
